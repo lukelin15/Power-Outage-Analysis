@@ -119,25 +119,51 @@ We created a new boolean column to indicate missing values in our OUTAGE.DURATIO
 
 [Visualization: The histogram shows the distribution of 'CUSTOMERS.AFFECTED' concerning missingness of 'OUTAGE.DURATION.']
 
-- **Dependency on 'TOTAL.SALES':** [Insert interpretation here based on the test result]
+- **Dependency on 'TOTAL.SALES':** Null Hypothesis: The missingness of outage duration does not depend on total sales.
+
+Alternative Hypothesis: The missingness of outage duration depends on total sales.
+
+We created a new boolean column to indicate missing values in our OUTAGE.DURATION column and used the Kolmogorov-Smirnov test to get a p-value of 0.00 which is lower than our significane level of 0.05. This means we reject the null hypothesis. Below we have a visualization of the two distributions and can see that distribution of TOTAL.SALES is different in both cases, and that it is likely the missingness of CUSTOMERS.AFFECTED does depend on the TOTAL.SALES column.
+
+[Visualization: The histogram shows the distribution of 'TOTAL.SALES' concerning missingness of 'OUTAGE.DURATION.']
 
 
 
 ### Hypothesis Testing
 
-We formulated a hypothesis test, with the following components:
+# Permutation Test for Mean Outage Duration (2005 vs. 2015)
+In this section, we perform a permutation test to assess whether there is a significant difference in the mean outage duration between the years 2005 and 2015.
 
-- **Null Hypothesis (H0)**: [Insert null hypothesis here]
-- **Alternative Hypothesis (H1)**: [Insert alternative hypothesis here]
-- **Test Statistic**: [Insert chosen test statistic here]
-- **Significance Level**: [Insert chosen significance level here]
-- **P-value**: [Insert calculated p-value here]
-- **Conclusion**: [Insert conclusion here]
+## Hypotheses
+- **Null Hypothesis (H0):** There is no difference in mean outage duration for outages that occured in 2005 and in 2015.
+- **Alternative Hypothesis (H1):** The mean outage duration for outages that occured in 2005 is larger than those that occured in 2015.
 
-Visualization: Optionally, include a visualization related to the hypothesis test.
-Include Optiontional Graph
+## Test Statistic
+We choose the difference in mean outage duration between the two years as our test statistic. The observed difference is calculated using the actual data, and we compare this against a distribution of differences obtained by shuffling the outage duration data.
+
+## Significance Level
+We set the significance level at 0.05, which is a common choice in hypothesis testing.
+
+## Justification
+- The choice of a permutation test is appropriate when the assumptions of parametric tests are not met, or the distribution of the data is unknown.
+- We use a one-sided test as we believe outage handling is unlikely to have gotten worse and we are only concerned with how its improved.
+- The test statistic (difference in means) aligns with the question of interest, comparing the average outage duration between the two years.
+- A significance level of 0.05 is commonly used and provides a balance between Type I and Type II errors.
+
+## Permutation Test Procedure
+- **Data Preparation:**
+We filter the dataset to include only rows from the years 2005 and 2015.
+Missing values are dropped from the dataset.
+- **Observation:**
+The observed difference in mean outage duration between 2005 and 2015 is computed.
+- **Permutation Test Loop (500 Repetitions):**
+In each iteration, the outage duration data is shuffled, and the difference in mean outage duration is calculated.
+These differences form a distribution under the null hypothesis.
+- **P-value Calculation:**
+The proportion of permuted mean differences that are greater than or equal to the observed difference is calculated.
+- **Results**
+The resulting p-value is the probability of observing a difference in mean outage duration as extreme as the observed difference under the assumption that there is no true difference between the years 2005 and 2015.
 
 ## Conclusion
-
-Summarize the key findings, limitations, and potential future work.
-
+**P-value: 0.0**
+**Conclusion:** Since our p-value is less than the chosen significance level (0.05), we reject the null hypothesis in favor of the alternative hypothesis, suggesting a significant difference in mean outage duration between the years 2005 and 2015. From our tests, we have sufficient evidence to reject our null hypothesis. We therefore reject the idea that outage durations have stayed the same over the past 10 years.
