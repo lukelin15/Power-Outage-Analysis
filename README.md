@@ -117,7 +117,7 @@ Alternative Hypothesis: The missingness of outage duration depends on customers 
 
 We created a new boolean column to indicate missing values in our OUTAGE.DURATION column and used the Kolmogorov-Smirnov test to get a p-value of 0.34 which is higher than our significane level of 0.05. This means we fail to reject the null hypothesis. Below we have a visualization of the two distributions and can see that distribution of CUSTOMERS.AFFECTED is similar in both cases, and that it is likely the missingness of CUSTOMERS.AFFECTED does not depend on the OUTAGE.DURATION column.
 
-[Visualization: The histogram shows the distribution of 'CUSTOMERS.AFFECTED' concerning missingness of 'OUTAGE.DURATION.']
+<iframe src="Assets/missing1.html" width=800 height=600 frameBorder=0></iframe>
 
 - **Dependency on 'TOTAL.SALES':** Null Hypothesis: The missingness of outage duration does not depend on total sales.
 
@@ -125,7 +125,7 @@ Alternative Hypothesis: The missingness of outage duration depends on total sale
 
 We created a new boolean column to indicate missing values in our OUTAGE.DURATION column and used the Kolmogorov-Smirnov test to get a p-value of 0.00 which is lower than our significane level of 0.05. This means we reject the null hypothesis. Below we have a visualization of the two distributions and can see that distribution of TOTAL.SALES is different in both cases, and that it is likely the missingness of CUSTOMERS.AFFECTED does depend on the TOTAL.SALES column.
 
-[Visualization: The histogram shows the distribution of 'TOTAL.SALES' concerning missingness of 'OUTAGE.DURATION.']
+<iframe src="Assets/missing2.html" width=800 height=600 frameBorder=0></iframe>
 
 
 
@@ -167,3 +167,5 @@ The resulting p-value is the probability of observing a difference in mean outag
 ## Conclusion
 **P-value: 0.0**
 **Conclusion:** Since our p-value is less than the chosen significance level (0.05), we reject the null hypothesis in favor of the alternative hypothesis, suggesting a significant difference in mean outage duration between the years 2005 and 2015. From our tests, we have sufficient evidence to reject our null hypothesis. We therefore reject the idea that outage durations have stayed the same over the past 10 years.
+
+<iframe src="Assets/conclusion.html" width=800 height=600 frameBorder=0></iframe>
