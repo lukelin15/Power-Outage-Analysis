@@ -110,10 +110,18 @@ In this section, we explored the possibility of Non-Missing at Random (NMAR) in 
 
 Since our question is based around whether outage handling has improved over time, we chose 'OUTAGE.DURATION' for analysis due to its non-trivial missingness and its contribution to measuring improvements in outage handling. Permutation tests were performed to analyze the dependency of the missingness of 'OUTAGE.DURATION' on other columns.
 
-- **Dependency on 'CUSTOMERS.AFFECTED':** [Insert interpretation here based on the test result]
+- **Dependency on 'CUSTOMERS.AFFECTED':**
+Null Hypothesis: The missingness of outage duration does not depend on customers affected.
+
+Alternative Hypothesis: The missingness of outage duration depends on customers affected.
+
+We created a new boolean column to indicate missing values in our OUTAGE.DURATION column and used the Kolmogorov-Smirnov test to get a p-value of 0.34 which is higher than our significane level of 0.05. This means we fail to reject the null hypothesis. Below we have a visualization of the two distributions and can see that distribution of CUSTOMERS.AFFECTED is similar in both cases, and that it is likely the missingness of CUSTOMERS.AFFECTED does not depend on the OUTAGE.DURATION column.
+
+[Visualization: The histogram shows the distribution of 'CUSTOMERS.AFFECTED' concerning missingness of 'OUTAGE.DURATION.']
+
 - **Dependency on 'TOTAL.SALES':** [Insert interpretation here based on the test result]
 
-Visualization: The histogram shows the distribution of 'CUSTOMERS.AFFECTED' concerning missingness of 'OUTAGE.DURATION.'
+
 
 ### Hypothesis Testing
 
