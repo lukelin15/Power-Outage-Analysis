@@ -60,6 +60,8 @@ Our dataset encompasses over 1000 rows, each representing a distinct power outag
 
 Here’s the head of the DataFrame:
 
+<div class="table-wrapper" markdown="block">
+
 | U.S._STATE   | OUTAGE.START        | OUTAGE.RESTORATION   |   CUSTOMERS.AFFECTED |   OUTAGE.DURATION |   DEMAND.LOSS.MW |   RES.PRICE | NERC.REGION   | CLIMATE.REGION     | CAUSE.CATEGORY     |   TOTAL.SALES |
 |:-------------|:--------------------|:---------------------|---------------------:|------------------:|-----------------:|------------:|:--------------|:-------------------|:-------------------|--------------:|
 | Minnesota    | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |                70000 |              3060 |              nan |       11.6  | MRO           | East North Central | severe weather     |       6562520 |
@@ -67,6 +69,8 @@ Here’s the head of the DataFrame:
 | Minnesota    | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |                70000 |              3000 |              nan |       10.87 | MRO           | East North Central | severe weather     |       5222116 |
 | Minnesota    | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |                68200 |              2550 |              nan |       11.79 | MRO           | East North Central | severe weather     |       5787064 |
 | Minnesota    | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |               250000 |              1740 |              250 |       13.07 | MRO           | East North Central | severe weather     |       5970339 |
+
+</div>
 
 In the next sections, we will illustrate the process through which we obtained this cleaned dataframe. Additionally, we will employ compelling visualizations to delve deeper into our primary research question.
 
