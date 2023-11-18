@@ -1,6 +1,6 @@
-# Analysis of Power Outages
+# Empowering Resilience: Unraveling the Tapestry of Power Outages Over a Decade
 
-by Luke Lin (lul018@ucsd.edu) & Andrew (anyin@ucsd.edu)
+by Luke Lin (lul018@ucsd.edu) & Andrew Yin (anyin@ucsd.edu)
 
 ---
 
